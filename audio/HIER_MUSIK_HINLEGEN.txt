@@ -1,0 +1,16 @@
+Lege hier deine Minecraft-Musikdateien (mp3) ab.
+
+Alle MP3-Dateien in diesem Ordner werden automatisch im Musik-Player der Website angezeigt und können abgespielt werden.
+Öffne dazu den Player über den 🎵-Button rechts unten auf der Website.
+
+Der Player zeigt alle Titel als Liste an und spielt die Dateien automatisch nacheinander ab.
+
+Um neue Musik hinzuzufügen:
+1. MP3-Datei in diesen Ordner (audio/) legen, z.B. "18 Neues Lied.mp3"
+2. Fertig! Die Datei wird automatisch vom Server erkannt und erscheint beim nächsten Laden der Website im Player.
+   (Kein manueller Eintrag in js/script.js nötig)
+
+Tipp: Die Nummer am Dateianfang (z.B. "01", "02") wird automatisch aus dem angezeigten Titel entfernt und dient nur der Sortierung.
+
+Hinweis: Die Website sollte über einen lokalen Server geöffnet werden (z.B. serve.ps1), da Browser MP3-Dateien direkt aus dem Dateisystem oft blockieren. Starte den Server mit:
+  powershell -ExecutionPolicy Bypass -File serve.ps1

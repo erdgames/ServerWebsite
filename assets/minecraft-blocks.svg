@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="256" height="256" shape-rendering="crispEdges">
+  <!-- Grass Block -->
+  <g id="grass">
+    <rect x="0" y="0" width="16" height="16" fill="#7cbd4b"/>
+    <rect x="0" y="0" width="16" height="4" fill="#8bd450"/>
+    <rect x="0" y="4" width="16" height="2" fill="#77aa3c"/>
+    <rect x="0" y="10" width="16" height="6" fill="#6b4423"/>
+    <rect x="0" y="10" width="5" height="2" fill="#7a4f2d"/>
+    <rect x="8" y="12" width="4" height="2" fill="#7a4f2d"/>
+    <rect x="2" y="14" width="4" height="2" fill="#5c3a1e"/>
+    <rect x="11" y="14" width="3" height="1" fill="#5c3a1e"/>
+  </g>
+
+  <!-- Diamant -->
+  <g id="diamond">
+    <rect x="16" y="0" width="16" height="16" fill="#4aedd9"/>
+    <rect x="16" y="0" width="6" height="6" fill="#63f5e4"/>
+    <rect x="20" y="2" width="10" height="10" fill="#35c9b8"/>
+    <rect x="22" y="8" width="4" height="4" fill="#7ff5e8"/>
+    <rect x="16" y="2" width="2" height="12" fill="#1ebfc7"/>
+    <rect x="30" y="2" width="2" height="12" fill="#1ebfc7"/>
+  </g>
+
+  <!-- Goldblock -->
+  <g id="gold">
+    <rect x="32" y="0" width="16" height="16" fill="#f8c627"/>
+    <rect x="32" y="0" width="6" height="6" fill="#ffd75e"/>
+    <rect x="36" y="4" width="4" height="8" fill="#d9a52a"/>
+    <rect x="40" y="2" width="6" height="6" fill="#f0b820"/>
+    <rect x="34" y="10" width="8" height="3" fill="#c8901e"/>
+  </g>
+
+  <!-- Obsidian -->
+  <g id="obsidian">
+    <rect x="48" y="0" width="16" height="16" fill="#1a0f2e"/>
+    <rect x="48" y="0" width="5" height="5" fill="#2c1b4e"/>
+    <rect x="56" y="3" width="4" height="4" fill="#3a2668"/>
+    <rect x="50" y="8" width="6" height="4" fill="#2c1b4e"/>
+    <rect x="58" y="10" width="5" height="5" fill="#150c28"/>
+    <rect x="52" y="3" width="3" height="3" fill="#4a3388"/>
+  </g>
+
+  <!-- TNT -->
+  <g id="tnt">
+    <rect x="64" y="0" width="16" height="16" fill="#d93d2b"/>
+    <rect x="64" y="0" width="16" height="4" fill="#ffffff"/>
+    <rect x="64" y="4" width="6" height="2" fill="#b8301f"/>
+    <rect x="68" y="8" width="8" height="8" fill="#b8301f"/>
+    <rect x="70" y="6" width="4" height="2" fill="#f04a36"/>
+    <rect x="68" y="12" width="4" height="2" fill="#f04a36"/>
+    <rect x="74" y="10" width="4" height="2" fill="#f04a36"/>
+  </g>
+
+  <!-- Enderperle -->
+  <g id="enderpearl">
+    <rect x="80" y="0" width="16" height="16" fill="#0b5b3a"/>
+    <circle cx="88" cy="8" r="6" fill="#0e6b45"/>
+    <rect x="84" y="4" width="4" height="4" fill="#18a068"/>
+    <rect x="90" y="7" width="3" height="3" fill="#18a068"/>
+    <rect x="86" y="11" width="3" height="2" fill="#076b42"/>
+  </g>
+
+  <!-- Smaragd -->
+  <g id="emerald">
+    <rect x="96" y="0" width="16" height="16" fill="#17b75e"/>
+    <rect x="96" y="0" width="6" height="6" fill="#28d472"/>
+    <rect x="102" y="4" width="5" height="8" fill="#0d9446"/>
+    <rect x="100" y="2" width="4" height="4" fill="#3de383"/>
+    <rect x="98" y="10" width="6" height="3" fill="#0a7d3a"/>
+  </g>
+
+  <!-- Redstone -->
+  <g id="redstone">
+    <rect x="112" y="0" width="16" height="16" fill="#a62626"/>
+    <rect x="112" y="0" width="6" height="6" fill="#c93838"/>
+    <rect x="118" y="4" width="5" height="8" fill="#8e1d1d"/>
+    <rect x="114" y="10" width="4" height="3" fill="#d9534f"/>
+    <rect x="120" y="8" width="4" height="4" fill="#7a1616"/>
+  </g>
+
+  <!-- Creeper Kopf -->
+  <g id="creeper-head">
+    <rect x="0" y="16" width="16" height="16" fill="#4daf4a"/>
+    <rect x="2" y="18" width="3" height="4" fill="#1d4b1b"/>
+    <rect x="7" y="18" width="3" height="4" fill="#1d4b1b"/>
+    <rect x="11" y="18" width="3" height="4" fill="#1d4b1b"/>
+    <rect x="4" y="22" width="8" height="6" fill="#1d4b1b"/>
+    <rect x="6" y="24" width="4" height="4" fill="#1d4b1b"/>
+    <rect x="6" y="26" width="4" height="4" fill="#1d4b1b"/>
+  </g>
+
+  <!-- Stein -->
+  <g id="stone">
+    <rect x="16" y="16" width="16" height="16" fill="#7d7d7d"/>
+    <rect x="18" y="18" width="4" height="4" fill="#8f8f8f"/>
+    <rect x="26" y="20" width="3" height="3" fill="#6b6b6b"/>
+    <rect x="22" y="26" width="5" height="3" fill="#8f8f8f"/>
+    <rect x="30" y="28" width="2" height="2" fill="#6b6b6b"/>
+  </g>
+
+  <!-- Holzbalken -->
+  <g id="wood">
+    <rect x="32" y="16" width="16" height="16" fill="#6b4423"/>
+    <rect x="32" y="16" width="2" height="16" fill="#7a4f2d"/>
+    <rect x="36" y="16" width="2" height="16" fill="#5c3a1e"/>
+    <rect x="40" y="16" width="2" height="16" fill="#7a4f2d"/>
+    <rect x="44" y="16" width="2" height="16" fill="#5c3a1e"/>
+  </g>
+
+  <!-- Lava -->
+  <g id="lava">
+    <rect x="48" y="16" width="16" height="16" fill="#ff6a00"/>
+    <rect x="50" y="18" width="4" height="3" fill="#ffb300"/>
+    <rect x="56" y="20" width="4" height="3" fill="#ff8c00"/>
+    <rect x="52" y="24" width="6" height="3" fill="#ffb300"/>
+    <rect x="58" y="28" width="4" height="3" fill="#ff8c00"/>
+  </g>
+
+  <!-- Apfel -->
+  <g id="apple">
+    <rect x="64" y="17" width="2" height="4" fill="#6b4423"/>
+    <rect x="64" y="19" width="2" height="2" fill="#3c2a1d"/>
+    <rect x="66" y="19" width="10" height="11" fill="#d43d3d"/>
+    <rect x="68" y="21" width="3" height="3" fill="#f06060"/>
+    <rect x="72" y="24" width="3" height="3" fill="#b02c2c"/>
+  </g>
+
+  <!-- Bett -->
+  <g id="bed">
+    <rect x="80" y="21" width="16" height="10" fill="#e05b5b"/>
+    <rect x="80" y="21" width="16" height="3" fill="#ffffff"/>
+    <rect x="80" y="24" width="5" height="7" fill="#b83d3d"/>
+    <rect x="80" y="28" width="16" height="3" fill="#8a2828"/>
+    <rect x="78" y="19" width="3" height="3" fill="#5c3a1e"/>
+  </g>
+
+  <!-- Zaubertrank -->
+  <g id="potion">
+    <rect x="98" y="17" width="3" height="4" fill="#8a5f3b"/>
+    <rect x="99" y="20" width="10" height="10" fill="#b74de0"/>
+    <rect x="100" y="22" width="3" height="4" fill="#d17ce8"/>
+    <rect x="106" y="23" width="3" height="4" fill="#9c35c4"/>
+    <rect x="99" y="28" width="10" height="2" fill="#7a1e9e"/>
+  </g>
+
+  <!-- Schwert (Diamant) -->
+  <g id="diamond-sword">
+    <rect x="114" y="18" width="3" height="10" fill="#4aedd9"/>
+    <rect x="114" y="19" width="1" height="1" fill="#7ff5e8"/>
+    <rect x="116" y="22" width="1" height="3" fill="#35c9b8"/>
+    <rect x="112" y="27" width="7" height="2" fill="#f8c627"/>
+    <rect x="114" y="29" width="3" height="3" fill="#8b5a2b"/>
+    <rect x="115" y="31" width="1" height="1" fill="#5c3a1e"/>
+  </g>
+
+  <!-- Bogen -->
+  <g id="bow">
+    <rect x="0" y="39" width="2" height="8" fill="#8b5a2b"/>
+    <rect x="2" y="35" width="2" height="2" fill="#6b4423"/>
+    <rect x="2" y="46" width="2" height="2" fill="#6b4423"/>
+    <rect x="1" y="34" width="2" height="3" fill="#c8c8c8"/>
+    <rect x="1" y="47" width="2" height="3" fill="#c8c8c8"/>
+    <rect x="3" y="39" width="6" height="2" fill="#a8763a"/>
+    <rect x="8" y="38" width="1" height="4" fill="#6b4423"/>
+  </g>
+
+  <!-- Pfeil -->
+  <g id="arrow">
+    <rect x="12" y="41" width="1" height="8" fill="#c8c8c8"/>
+    <rect x="10" y="48" width="1" height="2" fill="#c8c8c8"/>
+    <rect x="11" y="47" width="1" height="2" fill="#c8c8c8"/>
+    <rect x="13" y="40" width="2" height="2" fill="#5c5c5c"/>
+    <rect x="14" y="39" width="2" height="2" fill="#5c5c5c"/>
+    <rect x="11" y="49" width="4" height="2" fill="#7a4f2d"/>
+  </g>
+
+  <!-- Dorfbewohner Gesicht -->
+  <g id="villager">
+    <rect x="16" y="34" width="14" height="12" fill="#c6974a"/>
+    <rect x="18" y="36" width="3" height="3" fill="#57422a"/>
+    <rect x="25" y="36" width="3" height="3" fill="#57422a"/>
+    <rect x="21" y="39" width="4" height="4" fill="#a8783a"/>
+    <rect x="20" y="42" width="6" height="2" fill="#57422a"/>
+  </g>
+
+  <!-- Enderdrache -->
+  <g id="dragon">
+    <rect x="32" y="34" width="14" height="4" fill="#0a0a0a"/>
+    <rect x="34" y="36" width="2" height="4" fill="#1c1c1c"/>
+    <rect x="42" y="36" width="2" height="4" fill="#1c1c1c"/>
+    <rect x="30" y="37" width="3" height="3" fill="#7a1e9e"/>
+    <rect x="44" y="37" width="3" height="3" fill="#7a1e9e"/>
+    <rect x="36" y="38" width="6" height="3" fill="#2c2c2c"/>
+  </g>
+</svg>

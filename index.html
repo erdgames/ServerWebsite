@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoName SMP | Minecraft Server</title>
+    <meta name="description" content="Der ultimative Minecraft Server. Jetzt beitreten unter mc.hexcat.at">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232b2728'/><text x='50' y='68' font-size='45' text-anchor='middle' fill='%2369c3a4' font-family='Arial' font-weight='bold'>N</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">N</div>
+                <span>NoName<span class="logo-accent">SMP</span></span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active">Start</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#gamemodes" class="nav-link">Spielmodus</a></li>
+                <li><a href="#commands" class="nav-link">Befehle</a></li>
+                <li><a href="#map" class="nav-link nav-map hidden">Karte</a></li>
+                <li><a href="#online" class="nav-link">Online</a></li>
+                <li><a href="#discord" class="nav-link">Discord</a></li>
+                <li><a href="#about" class="nav-link">Über uns</a></li>
+            </ul>
+            <a href="#join" class="btn btn-primary btn-nav">Jetzt beitreten</a>
+            <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-bg">
+            <div class="pixel-mountains"></div>
+            <div class="pixel-sun"></div>
+            <div class="pixel-cloud cloud-1"></div>
+            <div class="pixel-cloud cloud-2"></div>
+            <div class="pixel-cloud cloud-3"></div>
+            <!-- Schwebende Minecraft-Blöcke -->
+            <svg class="floating-block block-grass" viewBox="0 0 16 16" aria-hidden="true">
+                <use href="assets/minecraft-blocks.svg#grass"></use>
+            </svg>
+            <svg class="floating-block block-diamond" viewBox="0 0 16 16" aria-hidden="true">
+                <use href="assets/minecraft-blocks.svg#diamond"></use>
+            </svg>
+            <svg class="floating-block block-gold" viewBox="0 0 16 16" aria-hidden="true">
+                <use href="assets/minecraft-blocks.svg#gold"></use>
+            </svg>
+            <svg class="floating-block block-obsidian" viewBox="0 0 16 16" aria-hidden="true">
+                <use href="assets/minecraft-blocks.svg#obsidian"></use>
+            </svg>
+            <svg class="floating-block block-tnt" viewBox="0 0 16 16" aria-hidden="true">
+                <use href="assets/minecraft-blocks.svg#tnt"></use>
+            </svg>
+            <svg class="floating-block block-creeper-head" viewBox="0 0 16 16" aria-hidden="true">
+                <use href="assets/minecraft-blocks.svg#creeper-head"></use>
+            </svg>
+            <svg class="floating-block block-redstone" viewBox="0 0 16 16" aria-hidden="true">
+                <use href="assets/minecraft-blocks.svg#redstone"></use>
+            </svg>
+            <svg class="floating-block block-emerald" viewBox="0 0 16 16" aria-hidden="true">
+                <use href="assets/minecraft-blocks.svg#emerald"></use>
+            </svg>
+        </div>
+        <div class="container hero-content">
+            <p class="hero-badge">🎮 Minecraft Java & Bedrock</p>
+            <h1 class="hero-title">TAUCHE EIN IN<br><span class="accent">NoName SMP</span></h1>
+            <p class="hero-subtitle">Dein neues Zuhause in der Blockwelt – mit epischen Builds, spannenden Abenteuern und einer großartigen Community.</p>
+
+            <div class="server-ip-card">
+                <div class="ip-status">
+                    <span class="status-dot"></span>
+                    <span id="server-status">Server wird geprüft...</span>
+                    <span class="ping-badge hidden" id="ping-badge"></span>
+                </div>
+                <div class="ip-copy">
+                    <span class="ip-label">Java:</span>
+                    <code class="ip-text ip-clickable" onclick="copyIp()">mc.hexcat.at</code>
+                </div>
+                <div class="ip-copy bedrock">
+                    <span class="ip-label">Bedrock:</span>
+                    <code class="ip-text ip-clickable" onclick="copyBedrockIp()">mcb.hexcat.at</code>
+                </div>
+                <p class="ip-help">Klicke auf eine Adresse, um sie zu kopieren – und füge sie dann in deinem Minecraft-Client ein!</p>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" id="stat-players">0</span>
+                    <span class="stat-label">Spieler online</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Online & Stabil</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1.21+</span>
+                    <span class="stat-label">Neueste Version</span>
+                </div>
+            </div>
+        </div>
+        <a href="#features" class="scroll-down" aria-label="Nach unten scrollen">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9l6 6 6-6"></path>
+            </svg>
+        </a>
+    </header>
+
+    <!-- Features Section -->
+    <section class="section features" id="features">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag">Warum NoName SMP?</p>
+                <h2 class="section-title">Features</h2>
+                <p class="section-desc">Alles, was dein Herz als Minecraft-Spieler begehrt – an einem Ort.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">😊</div>
+                    <h3>Friendly & Chill</h3>
+                    <p>A relaxed community — helpful, low-drama, and easy to talk to.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Small & Growing</h3>
+                    <p>A small server building a real, active community — early players shape the vibe.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Bedrock + Java</h3>
+                    <p>Console, mobile, or PC — everyone plays together on the same world.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Claims & TPAs</h3>
+                    <p>Protect your base, teleport to friends.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>24/7 Runtime</h3>
+                    <p>Online around the clock, hop on whenever.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Synced Chat</h3>
+                    <p>Minecraft & Discord chat are linked.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Anti-Cheat</h3>
+                    <p>No x-ray, no killaura, no shortcuts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Frequent Updates</h3>
+                    <p>New content, regularly — it keeps evolving.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Modes Section -->
+    <section class="section gamemodes" id="gamemodes">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag">Spielmodus</p>
+                <h2 class="section-title">Entdecke die Welt</h2>
+                <p class="section-desc">Ein klassisches Survival-Erlebnis mit Community, Claims und einem fair gestalteten Marktplatz.</p>
+            </div>
+            <div class="gamemode-grid single">
+                <div class="gamemode-card mode-survival">
+                    <div class="gamemode-overlay"></div>
+                    <div class="gamemode-content">
+                        <span class="gamemode-tag">Beliebt</span>
+                        <h3>Survival</h3>
+                        <p>Das klassische Überlebensabenteuer – mit Community, Claims und einem fair gestalteten Marktplatz. Baue, kämpfe und überlebe gemeinsam mit deinen Freunden.</p>
+                        <a href="#join" class="gamemode-link">Jetzt spielen →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commands Section -->
+    <section class="section commands" id="commands">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag">Server Commands</p>
+                <h2 class="section-title">Nützliche <span class="accent">Befehle</span></h2>
+                <p class="section-desc">Die wichtigsten Spielerbefehle auf einen Blick – so findest du dich auf NoName SMP sofort zurecht.</p>
+            </div>
+
+            <div class="commands-grid">
+                <!-- Teleportation -->
+                <div class="command-card">
+                    <div class="command-card-header">
+                        <span class="command-icon">🌍</span>
+                        <h3>Teleportation</h3>
+                    </div>
+                    <div class="command-list">
+                        <div class="command-item">
+                            <code>/spawn</code>
+                            <p>Teleportiert dich zum Server-Spawn.</p>
+                        </div>
+<div class="command-item">
+    <code>/home &lt;name&gt;</code>
+    <p>Teleportiert dich zu einem deiner Homes.</p>
+</div>
+                        <div class="command-item">
+<code>/sethome &lt;name&gt;</code>
+                            <p>Erstellt ein Home an deinem aktuellen Standort.</p>
+                        </div>
+                        <div class="command-item">
+<code>/delhome &lt;name&gt;</code>
+                            <p>Löscht eines deiner Homes.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/homes</code>
+                            <p>Listet alle deine Homes auf.</p>
+                        </div>
+                        <div class="command-item">
+<code>/tpa &lt;spieler&gt;</code>
+                            <p>Sendet eine Teleport-Anfrage an einen Spieler.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/tpaccept</code>
+                            <p>Akzeptiert eine Teleport-Anfrage.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/tpdeny</code>
+                            <p>Lehnt eine Teleport-Anfrage ab.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/back</code>
+                            <p>Kehrt zu deinem vorherigen Standort zurück.</p>
+                        </div>
+                        <div class="command-item">
+<code>/warp &lt;name&gt;</code>
+                            <p>Teleportiert zu einem öffentlichen Warp.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/warps</code>
+                            <p>Listet verfügbare Warps auf.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat & Kommunikation -->
+                <div class="command-card">
+                    <div class="command-card-header">
+                        <span class="command-icon">💬</span>
+                        <h3>Chat & Kommunikation</h3>
+                    </div>
+                    <div class="command-list">
+                        <div class="command-item">
+<code>/msg &lt;spieler&gt; &lt;nachricht&gt;</code>
+                            <p>Sendet eine private Nachricht.</p>
+                        </div>
+                        <div class="command-item">
+<code>/reply &lt;nachricht&gt;</code>
+                            <p>Antwortet auf die letzte private Nachricht.</p>
+                        </div>
+                        <div class="command-item">
+<code>/r &lt;nachricht&gt;</code>
+                            <p>Kurzform von /reply.</p>
+                        </div>
+                        <div class="command-item">
+<code>/ignore &lt;spieler&gt;</code>
+                            <p>Ignoriert die privaten Nachrichten eines Spielers.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/voicechat</code>
+                            <p>Öffnet das Simple Voice Chat Menü/Einstellungen.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wirtschaft -->
+                <div class="command-card">
+                    <div class="command-card-header">
+                        <span class="command-icon">💰</span>
+                        <h3>Wirtschaft</h3>
+                    </div>
+                    <div class="command-list">
+                        <div class="command-item">
+<code>/pay &lt;spieler&gt; &lt;betrag&gt;</code>
+                            <p>Sendet Geld an einen anderen Spieler.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/balance</code>
+                            <p>Zeigt deinen aktuellen Kontostand.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/bal</code>
+                            <p>Kurzform von /balance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Land Claims -->
+                <div class="command-card">
+                    <div class="command-card-header">
+                        <span class="command-icon">🏠</span>
+                        <h3>Land Claims</h3>
+                    </div>
+                    <div class="command-list">
+                        <div class="command-item">
+                            <code>/claim</code>
+                            <p>Erstellt einen Land-Claim.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/unclaim</code>
+                            <p>Entfernt einen Claim.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/claims</code>
+                            <p>Listet deine Claims auf.</p>
+                        </div>
+                        <div class="command-item">
+<code>/trust &lt;spieler&gt;</code>
+                            <p>Gibt einem Spieler Zugriff auf deinen Claim.</p>
+                        </div>
+                        <div class="command-item">
+<code>/untrust &lt;spieler&gt;</code>
+                            <p>Entfernt den Zugriff eines Spielers.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/claiminfo</code>
+                            <p>Zeigt Informationen über den Claim, in dem du stehst.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="commands-hint">Hinweis: Einige Befehle sind möglicherweise nicht verfügbar oder funktionieren je nach Server-Setup und installierten Plugins etwas anders.</p>
+        </div>
+    </section>
+
+    <!-- Map Section (versteckt, wird später aktiviert) -->
+    <section class="section map-section hidden" id="map">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag">Live-Karte</p>
+                <h2 class="section-title">Serverkarte</h2>
+                <p class="section-desc">Erkunde die Welt von NoName SMP in Echtzeit. Die Karte aktualisiert sich automatisch alle 10 Minuten.</p>
+            </div>
+            <div class="map-container">
+                <div class="map-loading" id="map-loading">
+                    <div class="map-spinner"></div>
+                    <p>Karte wird geladen...</p>
+                </div>
+                <iframe
+                    id="map-frame"
+                    class="map-frame"
+                    src=""
+                    title="NoName SMP Serverkarte"
+                    loading="lazy"
+                    allowfullscreen
+                ></iframe>
+            </div>
+            <p class="map-hint">Tipp: Die Karte wird alle 10 Minuten automatisch aktualisiert.</p>
+        </div>
+    </section>
+
+    <!-- Online Section -->
+    <section class="section online-section" id="online">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag">Live-Übersicht</p>
+                <h2 class="section-title">Wer ist <span class="accent">online?</span></h2>
+            </div>
+
+            <div class="online-count-display">
+                <div class="online-status-bar">
+                    <span class="status-dot" id="online-status-dot"></span>
+                    <span id="online-count-text">Spielerzahl wird geladen...</span>
+                </div>
+                <div class="online-number" id="online-number">–</div>
+                <p class="online-number-label">Spieler gerade online</p>
+                <span class="last-updated" id="last-updated"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discord Section -->
+    <section class="section discord-section" id="discord">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag">Community</p>
+                <h2 class="section-title">Tritt unserem <span class="accent">Discord</span> bei</h2>
+                <p class="section-desc">Verpasse keine Events, tausche dich mit anderen Spielern aus und bleib immer auf dem neuesten Stand.</p>
+            </div>
+
+            <div class="discord-card">
+                <div class="discord-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/>
+                    </svg>
+                </div>
+                <h3>NoName SMP Community</h3>
+                <p>Werde Teil unserer Discord-Community mit über tausenden Mitgliedern. Hier findest du Hilfe, Events, Giveaways und vieles mehr!</p>
+                <div class="discord-features">
+                    <div class="discord-feature">🎮 Events & Turniere</div>
+                    <div class="discord-feature">📢 Ankündigungen</div>
+                    <div class="discord-feature">🎁 Giveaways</div>
+                    <div class="discord-feature">🛠️ Support & Hilfe</div>
+                </div>
+                <a href="https://discord.gg/DEIN-EINLADUNGSCODE" target="_blank" rel="noopener noreferrer" class="btn btn-discord">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/>
+                    </svg>
+                    Discord beitreten
+                </a>
+                <p class="discord-hint">Kostenlos & ohne Anmeldung – einfach auf den Button klicken.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section class="section join" id="join">
+        <div class="container join-container">
+            <div class="join-content">
+                <h2 class="join-title">Bereit für dein <span class="accent">Abenteuer?</span></h2>
+                <p class="join-desc">Worauf wartest du noch? Starte Minecraft, füge unseren Server hinzu und werde Teil der NoName SMP-Familie!</p>
+            </div>
+            <div class="join-box">
+                <div class="join-box-header">
+                    <h3>Direkt beitreten</h3>
+                    <span class="status-dot big" id="join-status-dot"></span>
+                </div>
+                <p class="join-ip-label">Java:</p>
+                <code class="join-ip ip-clickable" onclick="copyIp()">mc.hexcat.at</code>
+                <p class="join-ip-label">Bedrock:</p>
+                <code class="join-ip bedrock-ip ip-clickable" onclick="copyBedrockIp()">mcb.hexcat.at</code>
+                <p class="join-hint">Klicke auf eine Adresse, um sie zu kopieren – und füge sie dann in deinem Minecraft-Client hinzu.</p>
+                <div class="join-whitelist">
+                    <a href="#discord" class="btn btn-discord btn-block">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/>
+                        </svg>
+                        Discord beitreten & Whitelist beantragen
+                    </a>
+                    <div class="join-whitelist-steps">
+                        <h4>So wirst du gewhitelistet:</h4>
+                        <ol>
+                            <li>Tritt unserem <a href="#discord">Discord</a> bei.</li>
+                            <li>Gehe in den Kanal <strong>#whitelist</strong>.</li>
+                            <li>Schreibe deinen Minecraft-Namen in den Chat.</li>
+                            <li>Warte kurz – ein Teammitglied whitelistet dich.</li>
+                            <li>Danach kannst du direkt auf dem Server joinen! 🎮</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container about-container">
+            <div class="about-image">
+                <div class="sword-image">
+                    <svg viewBox="0 0 64 96" width="200" height="300" xmlns="http://www.w3.org/2000/svg" aria-label="Minecraft Diamantschwert">
+                        <!-- Klinge (Diamant) – länger -->
+                        <polygon points="32,2 40,8 40,60 32,76 24,60 24,8" fill="#4AEDD9" stroke="#169C9C" stroke-width="1.5"/>
+                        <polygon points="32,2 40,8 40,60 32,76" fill="#7FF5E8" opacity="0.6"/>
+                        <polygon points="32,2 24,8 24,60 32,76" fill="#1EBFC7" opacity="0.5"/>
+                        <!-- Klingen-Details -->
+                        <line x1="32" y1="8" x2="32" y2="70" stroke="#169C9C" stroke-width="1" opacity="0.5"/>
+                        <polygon points="28,12 36,12 36,16 28,16" fill="#169C9C" opacity="0.4"/>
+                        <polygon points="28,20 36,20 36,24 28,24" fill="#169C9C" opacity="0.4"/>
+                        <polygon points="28,28 36,28 36,32 28,32" fill="#169C9C" opacity="0.4"/>
+                        <polygon points="28,36 36,36 36,40 28,40" fill="#169C9C" opacity="0.4"/>
+                        <polygon points="28,44 36,44 36,48 28,48" fill="#169C9C" opacity="0.4"/>
+                        <polygon points="28,52 36,52 36,56 28,56" fill="#169C9C" opacity="0.4"/>
+                        <!-- Parierstange (Gold) -->
+                        <rect x="14" y="60" width="36" height="6" rx="1" fill="#F8C627" stroke="#C88A1E" stroke-width="1"/>
+                        <rect x="10" y="61" width="6" height="4" rx="1" fill="#F0B820" stroke="#B07A15" stroke-width="0.8"/>
+                        <rect x="48" y="61" width="6" height="4" rx="1" fill="#F0B820" stroke="#B07A15" stroke-width="0.8"/>
+                        <!-- Griff (Braun) – länger -->
+                        <rect x="27" y="66" width="10" height="20" fill="#8B5A2B" stroke="#5C3A1E" stroke-width="1"/>
+                        <rect x="27" y="66" width="5" height="20" fill="#7A4D20" opacity="0.6"/>
+                        <!-- Knauf (Gold) -->
+                        <rect x="26" y="86" width="12" height="5" rx="1" fill="#F8C627" stroke="#C88A1E" stroke-width="0.8"/>
+                        <polygon points="30,86 34,86 32,81" fill="#C88A1E"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="about-text">
+                <p class="section-tag">Über uns</p>
+                <h2 class="section-title">Wer steckt hinter <span class="accent">NoName SMP?</span></h2>
+                <p>NoName SMP ist mehr als nur ein Minecraft-Server – es ist eine communitygetriebene Plattform, die von leidenschaftlichen Spielern für Spieler geschaffen wurde.</p>
+                <p>Unser Team arbeitet Tag und Nacht daran, die Server zu verbessern, neue Features zu entwickeln und sicherzustellen, dass jeder Spieler eine unvergessliche Zeit erlebt.</p>
+                <div class="about-check-list">
+                    <div class="check-item">✔ Täglich aktive Moderatoren & Admins</div>
+                    <div class="check-item">✔ Transparente Serverregeln & Fairness</div>
+                    <div class="check-item">✔ Ständige Updates & neue Inhalte</div>
+                </div>
+                <a href="#join" class="btn btn-primary">Werde Teil der Community</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container cta-container">
+            <h2>Die Blöcke warten auf dich! 🧱</h2>
+            <p>Schließe dich jetzt tausenden Spielern an und baue deine eigene Geschichte.</p>
+            <div class="cta-ip">
+                <span class="ip-label">Java:</span>
+                <code class="ip-clickable" onclick="copyIp()">mc.hexcat.at</code>
+            </div>
+            <div class="cta-ip bedrock">
+                <span class="ip-label">Bedrock:</span>
+                <code class="ip-clickable" onclick="copyBedrockIp()">mcb.hexcat.at</code>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon">N</div>
+                    <span>NoName<span class="logo-accent">SMP</span></span>
+                </div>
+                <p>Der ultimative Minecraft Server für Java & Bedrock. 24/7 online – wir sehen uns im Spiel!</p>
+            </div>
+            <div class="footer-links">
+                <h4>Server</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#gamemodes">Spielmodus</a></li>
+                    <li><a href="#commands">Befehle</a></li>
+                    <li><a href="#about">Über uns</a></li>
+                    <li><a href="#join">Beitreten</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Kontakt</h4>
+                <ul>
+                    <li><a href="mailto:support@hexcat.at">support@hexcat.at</a></li>
+                    <li><a href="#discord">Discord Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-ip">
+                <h4>Server IP</h4>
+                <div class="footer-ip-box">
+                    <code class="ip-clickable" onclick="copyIp()">mc.hexcat.at</code>
+                </div>
+                <div class="footer-ip-box bedrock">
+                    <code class="ip-clickable" onclick="copyBedrockIp()">mcb.hexcat.at</code>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 NoName SMP · Nicht mit Mojang oder Microsoft verbunden. Minecraft ist eine Marke von Mojang AB.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minecraft Hintergrundmusik -->
+    <audio id="bg-music" preload="auto"></audio>
+
+    <!-- Musik-Controls (immer rechts unten) -->
+    <div class="music-btn-group">
+        <button class="music-list-btn" id="music-list-btn" aria-label="Playlist öffnen" title="Playlist">
+            🎵
+        </button>
+    </div>
+
+    <!-- Musik-Panel (Playlist) -->
+    <div class="music-panel" id="music-panel">
+        <div class="music-panel-header">
+            <h3>🎵 Musik Player</h3>
+            <button class="music-panel-close" id="music-panel-close" aria-label="Playlist schließen">✕</button>
+        </div>
+        <div class="music-panel-controls">
+            <button class="music-control-btn" id="music-prev-btn" aria-label="Vorheriger Titel">⏮</button>
+            <button class="music-control-btn play" id="music-play-btn" aria-label="Wiedergabe starten oder pausieren">▶</button>
+            <button class="music-control-btn" id="music-next-btn" aria-label="Nächster Titel">⏭</button>
+        </div>
+        <div class="music-track-info">
+            <span id="music-track-title">Kein Titel ausgewählt</span>
+        </div>
+        <ul class="music-playlist" id="music-playlist"></ul>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">✓ Serveradresse wurde kopiert!</div>
+
+    <!-- Minecraft Easter Eggs -->
+    <div class="easter-egg-overlay hidden" id="creeper-overlay" aria-hidden="true">
+        <div class="creeper-face">
+            <img src="assets/creeper.svg" alt="Creeper" width="160" height="160">
+            <p class="creeper-text">Zisch... 💥</p>
+        </div>
+        <div class="creeper-particles" id="creeper-particles" aria-hidden="true"></div>
+    </div>
+    <div class="herobrine hidden" id="herobrine" aria-hidden="true">
+        <img src="assets/herobrine.svg" alt="Herobrine" width="96" height="192">
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
