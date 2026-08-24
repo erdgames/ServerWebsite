@@ -389,7 +389,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 // IntersectionObserver für sanfte Einblend-Effekte
 const revealElements = document.querySelectorAll(
-    ".feature-card, .gamemode-card, .command-card, .join-box, .sword-image, .about-text"
+    ".feature-card, .gamemode-card, .command-card, .gallery-carousel, .join-box, .sword-image, .about-text"
 );
 
 if ("IntersectionObserver" in window && revealElements.length > 0) {
@@ -419,6 +419,195 @@ if ("IntersectionObserver" in window && revealElements.length > 0) {
             "opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
         observer.observe(el);
     });
+}
+
+// ============================================
+// Bildergalerie (Server-Bilder Karussell)
+// ============================================
+
+// Manuelles Array aller Bilder im assets/pictures/ Ordner
+// Füge hier einfach deine Bilder hinzu - Format: { file: "assets/pictures/deinbild.png", title: "Dein Titel" }
+const GALLERY_IMAGES = [
+  { file: "assets/pictures/image.png", title: "Server Bild 1" },
+  { file: "assets/pictures/image1.png", title: "Server Bild 2" },
+  { file: "assets/pictures/image3.png", title: "Server Bild 3" },
+  { file: "assets/pictures/image4.png", title: "Server Bild 4" },
+  { file: "assets/pictures/image5.png", title: "Server Bild 5" },
+  { file: "assets/pictures/image6.png", title: "Server Bild 6" },
+  { file: "assets/pictures/image7.png", title: "Server Bild 7" },
+  { file: "assets/pictures/image8.png", title: "Server Bild 8" },
+  { file: "assets/pictures/image9.png", title: "Server Bild 9" },
+  { file: "assets/pictures/image10.png", title: "Server Bild 10" },
+  { file: "assets/pictures/image11.png", title: "Server Bild 11" },
+  { file: "assets/pictures/image12.png", title: "Server Bild 12" },
+  { file: "assets/pictures/image14.png", title: "Server Bild 13" }
+];
+
+// Leere Funktion für Kompatibilität mit bestehendem Code
+async function loadGalleryImages() {
+  // Bilder sind bereits im GALLERY_IMAGES Array definiert
+  return Promise.resolve();
+}
+
+const galleryCarousel = document.getElementById("gallery-carousel");
+const gallerySlides = document.getElementById("gallery-slides");
+const galleryLoading = document.getElementById("gallery-loading");
+const galleryPrev = document.getElementById("gallery-prev");
+const galleryNext = document.getElementById("gallery-next");
+const galleryDots = document.getElementById("gallery-dots");
+const galleryHint = document.getElementById("gallery-hint");
+
+let currentSlideIndex = 0;
+let galleryInterval = null;
+
+// --- Galerie initialisieren ---
+function initGallery() {
+  if (!galleryCarousel || !gallerySlides) return;
+
+  // Bilder laden
+  loadGalleryImages().then(() => {
+    // Lade-Overlay ausblenden
+    if (galleryLoading) {
+      galleryLoading.classList.add("hidden");
+    }
+
+    // Wenn keine Bilder vorhanden sind, Hinweis anzeigen
+    if (GALLERY_IMAGES.length === 0) {
+      if (galleryHint) {
+        galleryHint.style.display = "block";
+      }
+      return;
+    }
+
+    // Slides erstellen
+    buildGallerySlides();
+    // Dots erstellen
+    buildGalleryDots();
+    // Event-Listener hinzufügen
+    setupGalleryControls();
+    // Automatisches Wechseln starten
+    startGalleryAutoplay();
+    // Ersten Slide anzeigen
+    showSlide(0);
+  });
+}
+
+// --- Slides erstellen ---
+function buildGallerySlides() {
+  if (!gallerySlides) return;
+  gallerySlides.innerHTML = "";
+
+  GALLERY_IMAGES.forEach((image, index) => {
+    const slide = document.createElement("div");
+    slide.className = "gallery-slide";
+    slide.dataset.index = index;
+
+    const img = document.createElement("img");
+    img.src = image.file;
+    img.alt = image.title || `Server Bild ${index + 1}`;
+    img.loading = "lazy";
+
+    slide.appendChild(img);
+    gallerySlides.appendChild(slide);
+  });
+}
+
+// --- Dots erstellen ---
+function buildGalleryDots() {
+  if (!galleryDots) return;
+  galleryDots.innerHTML = "";
+
+  GALLERY_IMAGES.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.className = "gallery-dot";
+    dot.dataset.index = index;
+    dot.setAttribute("aria-label", `Bild ${index + 1}`);
+
+    dot.addEventListener("click", () => {
+      showSlide(index);
+      resetGalleryAutoplay();
+    });
+
+    galleryDots.appendChild(dot);
+  });
+}
+
+// --- Controls einrichten ---
+function setupGalleryControls() {
+  if (galleryPrev) {
+    galleryPrev.addEventListener("click", () => {
+      prevSlide();
+      resetGalleryAutoplay();
+    });
+  }
+
+  if (galleryNext) {
+    galleryNext.addEventListener("click", () => {
+      nextSlide();
+      resetGalleryAutoplay();
+    });
+  }
+
+  // Tastatur-Navigation
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+      prevSlide();
+      resetGalleryAutoplay();
+    } else if (e.key === "ArrowRight") {
+      nextSlide();
+      resetGalleryAutoplay();
+    }
+  });
+}
+
+// --- Slide anzeigen ---
+function showSlide(index) {
+  if (index < 0 || index >= GALLERY_IMAGES.length) return;
+
+  currentSlideIndex = index;
+
+  // Slides aktualisieren
+  const slides = gallerySlides?.querySelectorAll(".gallery-slide");
+  slides?.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+  });
+
+  // Dots aktualisieren
+  const dots = galleryDots?.querySelectorAll(".gallery-dot");
+  dots?.forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
+  });
+}
+
+// --- Nächster / Vorheriger Slide ---
+function nextSlide() {
+  const nextIndex = (currentSlideIndex + 1) % GALLERY_IMAGES.length;
+  showSlide(nextIndex);
+}
+
+function prevSlide() {
+  const prevIndex = (currentSlideIndex - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length;
+  showSlide(prevIndex);
+}
+
+// --- Autoplay ---
+function startGalleryAutoplay() {
+  // Intervall alle 5 Sekunden
+  galleryInterval = setInterval(() => {
+    nextSlide();
+  }, 5000);
+}
+
+function stopGalleryAutoplay() {
+  if (galleryInterval) {
+    clearInterval(galleryInterval);
+    galleryInterval = null;
+  }
+}
+
+function resetGalleryAutoplay() {
+  stopGalleryAutoplay();
+  startGalleryAutoplay();
 }
 
 // ============================================
@@ -866,14 +1055,14 @@ function spawnHerobrine() {
     }, 4000);
 }
 
-// Seltenes zufälliges Erscheinen (erst nach 45 Sekunden, dann alle 60–180 Sekunden)
-setTimeout(() => {
-    setInterval(() => {
-        if (Math.random() < 0.5) {
-            spawnHerobrine();
-        }
-    }, 60000 + Math.random() * 120000);
-}, 45000);
+// Seltenes zufälliges Erscheinen (erst nach 45 Sekunden, dann alle 60–180 Sekunden) - DEAKTIVIERT
+// setTimeout(() => {
+//     setInterval(() => {
+//         if (Math.random() < 0.5) {
+//             spawnHerobrine();
+//         }
+//     }, 60000 + Math.random() * 120000);
+// }, 45000);
 
 // ============================================
 // Initialisierung
@@ -882,3 +1071,4 @@ setTimeout(() => {
 updateNavbar();
 updateActiveLink();
 initMusic();
+initGallery();

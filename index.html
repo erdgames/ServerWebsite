@@ -23,6 +23,7 @@
                 <li><a href="#home" class="nav-link active">Start</a></li>
                 <li><a href="#features" class="nav-link">Features</a></li>
                 <li><a href="#gamemodes" class="nav-link">Spielmodus</a></li>
+                <li><a href="#gallery" class="nav-link">Galerie</a></li>
                 <li><a href="#commands" class="nav-link">Befehle</a></li>
                 <li><a href="#map" class="nav-link nav-map hidden">Karte</a></li>
                 <li><a href="#online" class="nav-link">Online</a></li>
@@ -189,6 +190,43 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-tag">Server Bilder</p>
+                <h2 class="section-title">Unsere <span class="accent">Galerie</span></h2>
+                <p class="section-desc">Ein Blick auf die besten Momente und Builds von NoName SMP.</p>
+            </div>
+
+            <div class="gallery-container">
+                <div class="gallery-carousel" id="gallery-carousel">
+                    <div class="gallery-loading" id="gallery-loading">
+                        <div class="gallery-spinner"></div>
+                        <p>Bilder werden geladen...</p>
+                    </div>
+                    <div class="gallery-slides" id="gallery-slides">
+                        <!-- Bilder werden dynamisch geladen -->
+                    </div>
+                    <button class="gallery-nav gallery-prev" id="gallery-prev" aria-label="Vorheriges Bild">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"></path>
+                        </svg>
+                    </button>
+                    <button class="gallery-nav gallery-next" id="gallery-next" aria-label="Nächstes Bild">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"></path>
+                        </svg>
+                    </button>
+                    <div class="gallery-dots" id="gallery-dots">
+                        <!-- Punkte werden dynamisch geladen -->
+                    </div>
+                </div>
+                <p class="gallery-hint" id="gallery-hint" style="display: none;">Keine Bilder gefunden. Füge Bilder zum assets/pictures/ Ordner hinzu.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Commands Section -->
     <section class="section commands" id="commands">
         <div class="container">
@@ -210,16 +248,16 @@
                             <code>/spawn</code>
                             <p>Teleportiert dich zum Server-Spawn.</p>
                         </div>
-<div class="command-item">
-    <code>/home &lt;name&gt;</code>
-    <p>Teleportiert dich zu einem deiner Homes.</p>
-</div>
                         <div class="command-item">
-<code>/sethome &lt;name&gt;</code>
+                            <code>/home set &lt;name&gt;</code>
                             <p>Erstellt ein Home an deinem aktuellen Standort.</p>
                         </div>
                         <div class="command-item">
-<code>/delhome &lt;name&gt;</code>
+                            <code>/home tp &lt;name&gt;</code>
+                            <p>Teleportiert dich zu einem deiner Homes.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/home delete &lt;name&gt;</code>
                             <p>Löscht eines deiner Homes.</p>
                         </div>
                         <div class="command-item">
@@ -227,7 +265,7 @@
                             <p>Listet alle deine Homes auf.</p>
                         </div>
                         <div class="command-item">
-<code>/tpa &lt;spieler&gt;</code>
+                            <code>/tpa &lt;spieler&gt;</code>
                             <p>Sendet eine Teleport-Anfrage an einen Spieler.</p>
                         </div>
                         <div class="command-item">
@@ -243,12 +281,8 @@
                             <p>Kehrt zu deinem vorherigen Standort zurück.</p>
                         </div>
                         <div class="command-item">
-<code>/warp &lt;name&gt;</code>
-                            <p>Teleportiert zu einem öffentlichen Warp.</p>
-                        </div>
-                        <div class="command-item">
-                            <code>/warps</code>
-                            <p>Listet verfügbare Warps auf.</p>
+                            <code>/warp tp &lt;name&gt;</code>
+                            <p>Teleportiert dich zu einem Warp.</p>
                         </div>
                     </div>
                 </div>
@@ -302,6 +336,18 @@
                             <code>/bal</code>
                             <p>Kurzform von /balance.</p>
                         </div>
+                        <div class="command-item">
+                            <code>/servershop</code>
+                            <p>Öffnet den Server-Shop zum Kaufen/Verkaufen.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/orders claim</code>
+                            <p>Beansprucht eine offene Bestellung.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/orders request</code>
+                            <p>Erstellt eine neue Bestellung.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -313,34 +359,33 @@
                     </div>
                     <div class="command-list">
                         <div class="command-item">
-                            <code>/claim</code>
-                            <p>Erstellt einen Land-Claim.</p>
+                            <code>/spawn</code>
+                            <p>Hole dir hier die Claim-Schaufel.</p>
                         </div>
                         <div class="command-item">
-                            <code>/unclaim</code>
-                            <p>Entfernt einen Claim.</p>
+                            <p>Rechtsklicke mit der Claim-Schaufel zwei gegenüberliegende Ecken, um den Bereich dazwischen zu claimen.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/claim abandon</code>
+                            <p>Löscht deinen aktuellen Claim.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/claim trust &lt;spieler&gt;</code>
+                            <p>Gibt einem Spieler Zugriff auf deinen Claim.</p>
+                        </div>
+                        <div class="command-item">
+                            <code>/claim untrust &lt;spieler&gt;</code>
+                            <p>Entfernt den Zugriff eines Spielers.</p>
                         </div>
                         <div class="command-item">
                             <code>/claims</code>
                             <p>Listet deine Claims auf.</p>
                         </div>
-                        <div class="command-item">
-<code>/trust &lt;spieler&gt;</code>
-                            <p>Gibt einem Spieler Zugriff auf deinen Claim.</p>
-                        </div>
-                        <div class="command-item">
-<code>/untrust &lt;spieler&gt;</code>
-                            <p>Entfernt den Zugriff eines Spielers.</p>
-                        </div>
-                        <div class="command-item">
-                            <code>/claiminfo</code>
-                            <p>Zeigt Informationen über den Claim, in dem du stehst.</p>
-                        </div>
                     </div>
                 </div>
             </div>
 
-            <p class="commands-hint">Hinweis: Einige Befehle sind möglicherweise nicht verfügbar oder funktionieren je nach Server-Setup und installierten Plugins etwas anders.</p>
+            <p class="commands-hint">Hinweis: Du kannst maximal 5 Homes gleichzeitig haben. Einige Befehle sind möglicherweise nicht verfügbar oder funktionieren je nach Server-Setup und installierten Plugins etwas anders.</p>
         </div>
     </section>
 

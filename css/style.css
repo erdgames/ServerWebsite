@@ -895,6 +895,168 @@ img {
 }
 
 /* ============================================
+   Gallery Section
+   ============================================ */
+
+.gallery {
+  background: var(--dark-2);
+}
+
+.gallery-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gallery-carousel {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--dark-3);
+  aspect-ratio: 16 / 9;
+  box-shadow: var(--shadow);
+}
+
+.gallery-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-3);
+  z-index: 10;
+}
+
+.gallery-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--dark-4);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.gallery-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.gallery-slide.active {
+  opacity: 1;
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  z-index: 5;
+}
+
+.gallery-nav:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.gallery-prev {
+  left: 12px;
+}
+
+.gallery-next {
+  right: 12px;
+}
+
+.gallery-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+
+.gallery-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.gallery-dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.gallery-dot.active {
+  background: var(--primary);
+  transform: scale(1.2);
+}
+
+.gallery-hint {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .gallery-nav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .gallery-prev {
+    left: 8px;
+  }
+
+  .gallery-next {
+    right: 8px;
+  }
+
+  .gallery-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* ============================================
    Commands Section
    ============================================ */
 
@@ -1750,6 +1912,11 @@ img {
 }
 
 .map-loading.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gallery-loading.hidden {
   opacity: 0;
   pointer-events: none;
 }
