@@ -1,0 +1,176 @@
+{
+  "minecraft": "26.2",
+  "loader": "Fabric",
+  "mods": [
+    {
+      "name": "Alternative",
+      "file": "alternative-125.0-fabric-1.21.7.jar",
+      "url": "https://modrinth.com/mod/alternative"
+    },
+    {
+      "name": "Alternate Current",
+      "file": "alternate-current-mc26.2-1.19.0.jar",
+      "url": "https://modrinth.com/mod/alternate-current"
+    },
+    {
+      "name": "AntiXray",
+      "file": "antixray-fabric-1.4.18+1.21.jar",
+      "url": "https://modrinth.com/mod/antixray"
+    },
+    {
+      "name": "Architectury API",
+      "file": "architectury-fabric-16.0.2.jar",
+      "url": "https://modrinth.com/mod/architectury-api"
+    },
+    {
+      "name": "C2ME",
+      "file": "c2me-fabric-mc26.2-0.3.4+beta.1.6.jar",
+      "url": "https://modrinth.com/mod/c2me-fabric"
+    },
+    {
+      "name": "ClaimMod",
+      "file": "ClaimMod-1.9.5.jar",
+      "url": "https://modrinth.com/mod/claimmod"
+    },
+    {
+      "name": "Cloth Config",
+      "file": "cloth-config-28.2.15.jar",
+      "url": "https://modrinth.com/mod/cloth-config"
+    },
+    {
+      "name": "Clumps",
+      "file": "Clumps-fabric-26.2.0.2.jar",
+      "url": "https://modrinth.com/mod/clumps"
+    },
+    {
+      "name": "Discord Integration",
+      "file": "dcintegration-fabric-MC26.2-3.2.0.jar",
+      "url": "https://modrinth.com/mod/dcintegration"
+    },
+    {
+      "name": "DSBugFix",
+      "file": "dsbugfix-26.2.0.0.jar",
+      "url": ""
+    },
+    {
+      "name": "EconomyRAL",
+      "file": "economyral-fabric-1.8.1_26.2.jar",
+      "url": "https://modrinth.com/mod/economyral"
+    },
+    {
+      "name": "Essential Commands",
+      "file": "essential_commands-0.49.0+mc1.26.2.jar",
+      "url": "https://modrinth.com/mod/essential-commands"
+    },
+    {
+      "name": "Fabric API",
+      "file": "fabric-api-0.158.0+26.2.1.jar",
+      "url": "https://modrinth.com/mod/fabric-api"
+    },
+    {
+      "name": "Carpet",
+      "file": "fabric-carpet-26.2+v20250716.jar",
+      "url": "https://modrinth.com/mod/carpet"
+    },
+    {
+      "name": "Fabric Language Kotlin",
+      "file": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar",
+      "url": "https://modrinth.com/mod/fabric-language-kotlin"
+    },
+    {
+      "name": "Fabric Resource Pack API",
+      "file": "fabric-rp-1.8.0.jar",
+      "url": ""
+    },
+    {
+      "name": "FerriteCore",
+      "file": "ferritecore-9.0.8-fabric.jar",
+      "url": "https://modrinth.com/mod/ferrite-core"
+    },
+    {
+      "name": "Floodgate",
+      "file": "floodgate-fabric-2.2.8-b67.jar",
+      "url": "https://modrinth.com/plugin/floodgate"
+    },
+    {
+      "name": "Forge Config API Port",
+      "file": "ForgeConfigAPIPort-v26.2.1-mc26.2.5-fabric.jar",
+      "url": "https://modrinth.com/mod/forge-config-api-port"
+    },
+    {
+      "name": "Geyser",
+      "file": "Geyser-Fabric.jar",
+      "url": "https://modrinth.com/plugin/geyser"
+    },
+    {
+      "name": "JEI",
+      "file": "jei-26.2-fabric-20.19.0.173.jar",
+      "url": "https://modrinth.com/mod/jei"
+    },
+    {
+      "name": "ImmediatelyFast",
+      "file": "immediatelyfast-1.28.6-fabric-1.26.2.jar",
+      "url": "https://modrinth.com/mod/immediatelyfast"
+    },
+    {
+      "name": "Lithium",
+      "file": "lithium-fabric-0.25.1+mc26.2.jar",
+      "url": "https://modrinth.com/mod/lithium"
+    },
+    {
+      "name": "LuckPerms",
+      "file": "LuckPerms-Fabric-5.5.57.jar",
+      "url": "https://modrinth.com/mod/luckperms"
+    },
+    {
+      "name": "Packet Fixer",
+      "file": "packetfixer-fabric-2.3.5+26.2.jar",
+      "url": "https://modrinth.com/mod/packet-fixer"
+    },
+    {
+      "name": "Resourceful Config",
+      "file": "ResourcefulConfig-5.6.9.jar",
+      "url": "https://modrinth.com/mod/resourceful-config"
+    },
+    {
+      "name": "ScalableLux",
+      "file": "ScalableLux-0.2.1-fabric+26.0.5.48+1.21.jar",
+      "url": "https://modrinth.com/mod/scalablelux"
+    },
+    {
+      "name": "Structure Layout Optimizer",
+      "file": "structure_layout_optimizer-1.14-26.1-fabric.jar",
+      "url": "https://modrinth.com/mod/structure-layout-optimizer"
+    },
+    {
+      "name": "Styled Chat",
+      "file": "styled-chat-1.21.3-26.2.jar",
+      "url": "https://modrinth.com/mod/styled-chat"
+    },
+    {
+      "name": "TalkBalloons",
+      "file": "TalkBalloons-fabric-1.5.4+26.2.jar",
+      "url": "https://modrinth.com/mod/talk-balloons"
+    },
+    {
+      "name": "Trade Cycling",
+      "file": "trade-cycling-fabric-1.9.2+26.2.jar",
+      "url": "https://modrinth.com/mod/trade-cycling"
+    },
+    {
+      "name": "VMP",
+      "file": "vmp-fabric-mc26.2-rc.2+26.2-beta.7235-d1.jar",
+      "url": "https://modrinth.com/mod/vmp-fabric"
+    },
+    {
+      "name": "Simple Voice Chat",
+      "file": "voicechat-fabric-2.6.2+26.2.jar",
+      "url": "https://modrinth.com/mod/simple-voice-chat"
+    },
+    {
+      "name": "XEnderChest",
+      "file": "xenderchest-1.1.8.jar",
+      "url": "https://modrinth.com/mod/xenderchest"
+    }
+  ]
+}
